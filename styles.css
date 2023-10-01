@@ -1,0 +1,700 @@
+/* color palette
+#0D0D0D - Black
+#F2F2F2 - very light gray
+#7ABFBF - robins egg blue
+rgba(122, 191, 191, .5) - light robins egg blue
+#EB5428 - pumpkin orange 
+
+small width: 414px
+medium width: 768 px
+large width: 1280px
+*/
+
+/* CSS reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*page styling*/
+
+html {
+    background-color: rgba(122, 191, 191, .5);
+    width:414px;
+    margin: 0 auto;
+}
+
+body {
+    background-color:#F2F2F2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "nav"
+        "search"
+        "header"
+        "details"
+        "ingredients"
+        "directions"
+        "aside"
+        "footer";
+}
+
+header {
+    grid-area: header;
+}
+
+header figcaption {
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px;
+    font-size: 16px;
+    line-height:2;
+}
+
+div.search {
+    grid-area: search;
+    justify-self: center;
+    vertical-align: bottom;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    vertical-align: bottom;
+    height: 50px;
+}
+
+div.search input {
+    margin: 0;
+    height: 40px;
+    width: 250px;
+    vertical-align: top;
+    border: solid #EB5428 3px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+div.search svg {
+    border: solid #EB5428 3px;
+    padding: 0;
+}
+
+ul li, ol li {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    padding: 10px 0 5px 10px;
+}
+
+.details ul {
+    list-style: none;
+    list-style-position: inside;
+}
+
+.directions ol {
+    padding-left: 25px;
+}
+
+.directions li {
+    line-height:1.25;
+    
+}
+
+.ingredients ul{
+    list-style-type: square;
+    list-style-position: inside;
+}
+
+menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+menu li {
+    display: grid;
+    font-family:'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: #EB5428;
+    list-style: none;
+}
+
+menu li:nth-of-type(4) svg {
+    padding-left:25px;
+}
+
+header figure img:nth-of-type(1) {
+    width: 100%;
+}
+
+h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    padding:5px;
+    text-align: center;
+}
+
+h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 25px;
+}
+
+section.details {
+    grid-area: details;
+}
+
+
+section.ingredients {
+    grid-area: ingredients;
+}
+
+section.directions {
+    grid-area: directions;
+}
+
+aside {
+    background-color: #7ABFBF;
+    padding: 10px;
+    grid-area: aside;
+}
+
+aside h2{
+    padding-bottom: 30px;
+}
+
+aside section {
+    padding:10px 0 10px 0;
+}
+section img {
+    width: 80%;
+}
+
+section.rice, section.salsa, section.guac, section.tortilla {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "img title"
+    "img text";
+}
+
+section.rice dl, section.salsa dl, section.guac dl, section.tortilla dl {
+    grid-area: text;
+}
+
+section.rice img, section.salsa img, section.guac img, section.tortilla img {
+    grid-area: img;
+}
+
+dl {
+    line-height: 1.5;
+}
+
+dd {
+    font-family: 'Monsterrat', sans-serif;
+    font-weight:700;
+}
+
+dt {
+    font-family: 'Monsterrat', sans-serif;
+    font-weight: 400;
+}
+
+footer {
+    grid-area: footer;
+    justify-content: center;
+    background-color: #ffffff;
+    margin-top: 20px;
+}
+
+footer h2, footer h3 {
+    visibility: hidden;
+    height: 1px;
+}
+
+footer ul {  
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-around;
+    padding-top: 10px;
+}
+
+footer li {
+    font-family: 'Bebas Neue', sans-serif; 
+    font-size: 20px;
+    color: #EB5428;
+    align-items: center;
+    padding: 0;
+}
+
+footer li:nth-of-type(1) svg {
+    padding-left:10px;    
+}
+
+footer li:nth-of-type(2) svg {
+    padding-left:15px;    
+}
+
+footer li:nth-of-type(3) svg, footer li:nth-of-type(4) svg {
+    padding-left: 7px;    
+}
+
+footer figure img {
+    width:50%;
+    padding: 10px 0 10px 100px;
+}
+
+footer figcaption {
+    text-align: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+}
+
+nav {
+    grid-area: nav;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    width: 414px;
+    height:75px;
+    /* padding-bottom:10px; */
+    background-color: #ffffff;
+    border-bottom: rgba(100, 100, 100, .5);
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 75px;
+    grid-template-areas: "hamburger logo avatar";
+    justify-items: center;
+}
+
+.details li br {
+    display: none;
+}
+
+/*hamburger and nav*/
+
+nav h2 {
+    visibility: hidden;
+    height:1px;
+}
+
+nav ul {
+    text-align: center;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+nav a {
+    text-decoration: none;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: #EB5428;
+    
+}
+
+nav li img {
+    height:10px;
+    padding-left: 10px;
+}
+
+label {
+    cursor: pointer;
+    grid-area: hamburger;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+label a {
+    color: #000000;
+}
+
+
+input#dropdown {
+    display: none;
+}
+
+input:checked ~ ul {
+    max-height: 300px;
+}
+
+.logo {
+    grid-area: logo;
+    width:200px;
+    height:75px;
+    background-color: #EB5428;
+}
+
+nav .logo svg{
+    padding-left:70px;
+}
+
+.avatar {
+   grid-area: avatar;
+   background-color: #ffffff;
+   color: #000000;
+}
+
+
+@media screen and (min-width: 768px) {
+    html {
+        width: 768px;
+    }
+
+    body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;        
+        grid-template-areas: 
+        "nav nav"
+        "header header "
+        "main main "
+        "footer footer";
+    }
+
+    h1 {
+        text-align: left;
+        padding: 20px 0 20px 20px;
+    }
+
+    menu{
+        background-color: rgba(255, 255, 255, 0.75);
+        position: absolute;
+        width: 768px;
+        height:80px;
+        padding-top: 10px;
+    }
+
+    menu li:nth-of-type(4) svg {
+        padding-left:0;
+    }
+
+    span {
+        visibility: hidden;
+        height: 1px;
+    }
+    main {
+        grid-area: main;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: .5fr 1fr 1fr;
+        grid-template-areas: 
+        "details details details"
+        "ingredients directions directions"
+        "aside aside aside";                
+    }
+
+    section.details {
+        grid-area: details;
+    }
+
+    .details ul {
+        text-align: center;
+    }
+
+    section.ingredients {
+        grid-area: ingredients;
+
+    }
+
+    section.directions {
+        grid-area: directions;
+    }
+
+    aside {
+        grid-area: aside;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "title title"
+        "rice salsa"
+        "guac tortillas";
+    }
+
+    aside h2 {
+        grid-area: title;
+        padding:0;
+    }
+
+    nav {
+        grid-area: nav;
+        width:768px;
+        height:200px;
+        background-color: #ffffff;
+        grid-template-columns: 1fr 7fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+        "logo search avatar"
+        "li li li";
+        align-items: start;
+        padding-top: 0;
+    }
+
+    nav a{
+        text-align: center;
+    }
+
+    nav ul {
+        width: 768px;
+        text-align: center;
+        overflow: unset;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-area: li;
+        margin: 0 auto;
+        justify-content: space-evenly;
+    }
+
+    nav li {
+        list-style: none;
+    }
+
+    nav li img {
+        height: 50px;
+        padding-left:0;
+    }
+    div.search {
+        grid-area: nav;
+        padding-left: 200px;
+    }
+
+    nav .logo svg{
+        padding-left:0;
+    }
+
+    .logo {
+        background-color: #EB5428;
+        padding: 10px 10px 10px 10px;
+        width: 65px;
+        align-self: self-start;
+    }
+
+    .avatar {
+        display: grid;
+        justify-content: center;
+    }
+
+    .avatar svg{
+        padding-left:20px;
+        padding-top: 20px
+    }
+
+    label {
+        visibility: hidden;
+        position:absolute;
+    }
+
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "figure social" ;
+    }
+
+    footer ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-area: social;
+    }
+    
+    footer figure{
+        display: grid;
+        grid-area: figure;
+    }
+
+    footer figure img {
+        width: 50%;
+        padding: 10px 0 10px 100px;
+    }
+}
+
+@media screen and (min-width:1280px) {
+
+    html {
+        width: 1280px;
+    }
+
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "nav"
+        "search"
+        "header"
+        "main"
+        "aside"
+        "footer";
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr 7fr;
+        column-gap: 0;
+        grid-template-areas: 
+        "title title"
+        "menu figure";
+    }
+
+    main {
+        grid-template-rows: .1fr 1fr;
+    }
+    menu {
+        position: relative;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr 4fr;
+        grid-area: menu;
+        width:auto;
+        height: auto;
+        align-self: stretch;
+        justify-self: center;
+        border: solid #EB5428 5px;
+    }
+
+    menu li {
+        display: grid;
+        padding: 0 0 0 50px;
+        height: 50%;
+    }
+
+    h1 {
+        grid-area: title;
+        text-align: center;
+    }
+    header figure{
+        grid-area: figure;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    header figure img:nth-of-type(1) {
+        width: 100%;
+    }
+
+    header figcaption {
+        line-height: 2;
+    }
+    
+    div.search {
+        display: inline;
+        grid-area: search;
+    }
+
+    nav {
+        width:1280px;
+        display: grid;
+        grid-template-columns: .5fr 5fr .5fr;
+        grid-template-rows: auto;
+        grid-template-areas: "logo li avatar";
+        height: 100px;
+        padding:0;
+    }
+
+    nav ul{
+        grid-area: li;
+        width: 800px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        justify-content: space-evenly;
+    }
+
+    .logo {
+        width: 85%;
+        height: 80%;
+    }
+
+    div.search {
+        padding: 50px 0 0 0;
+    }
+
+    .details {
+        color:#7ABFBF;
+        background-color: #0D0D0D;
+        
+    }
+
+    .details ul{
+        display:flex;
+        justify-content: space-evenly;
+    }
+
+    .details li br {
+        display:unset;
+    }
+
+    aside {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "title title title title"
+        "rice salsa guac tortillas";
+        padding: 25px 0 0 35px;
+    }
+
+    section.rice, section.salsa, section.guac, section.tortilla {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr .2fr .25fr;
+        grid-template-areas: 
+        "img"
+        "title"
+        "text";
+        justify-content: center;
+    }
+
+    aside h3 {
+        padding: 10px 0 10px 0;
+    }
+
+    dl {
+        padding: 10px 0 10px 0;
+    }
+
+    footer {
+        grid-template-columns: 1fr 1fr 2fr;
+        grid-template-rows: 2fr;
+        grid-template-areas: "figure . social";
+        padding: 30px 0 20px 10px;
+        margin:0;
+    }
+    footer figure {
+        display: flex;
+    }
+    footer figure img {
+        padding:0;
+    }
+}
+
